@@ -7,9 +7,8 @@ class RasterMap(object):
         # Open the elevation dataset
         self.data = rasterio.open(tif)
 
-        # ignore values less than 0
         band = self.data.read(1)
-        band[band <= 0] = 0
+        band[band <= 0] = 0  # ignore values less than 0
 
         self.band = band
         self.max_val = np.max(band)
@@ -19,5 +18,4 @@ class RasterMap(object):
         return self.band[vals]
 
     def get_cost(self, lat, lon):
-        j = self.get_elevation(lat, lon) * -1 + self.max_val  # invert elevation for accent rather than decent
-        return j
+        return self.get_elevation(lat, lon) * -1 + self.max_val  # invert elevation for accent rather than decent
