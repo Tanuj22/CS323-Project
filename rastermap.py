@@ -15,3 +15,9 @@ class RasterMap(object):
     def get_elevation(self, lat, lon):
         vals = self.data.index(lon, lat)
         return self.band[vals]
+
+    def compute_cost(self, theta):
+        lat, lon = theta[0], theta[1]
+        j = self.get_elevation(lat, lon)
+
+        return j
