@@ -14,6 +14,10 @@ algorithms = {
     'Gradient Decent': {'function': algo.gradient_descent, 'color': '#FF0000'}
 }
 
+# clean before running the experiment
+for csv_file in os.listdir('outputs/'):
+    os.remove(f'outputs/{csv_file}')
+
 plt.style.use('ggplot')
 fig = plt.figure()
 
