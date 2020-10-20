@@ -11,7 +11,8 @@ args = json.load(open('args.json'))
 current_map = RasterMap(args['tif'])
 
 algorithms = {
-    'Gradient Decent': {'function': algo.gradient_descent, 'color': '#FF0000'}
+    'Gradient Decent': {'function': algo.gradient_descent, 'color': '#FF0000'},
+    'Momentum': {'function': algo.gradient_descent_w_momentum, 'color': '#009933'}
 }
 
 # clean before running the experiment
