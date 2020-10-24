@@ -2,8 +2,8 @@ import csv
 import os
 import json
 import numpy as np
-from rastermap import RasterMap
-import algorithms as algo
+from src.rastermap import RasterMap
+import src.algorithms as algo
 import matplotlib.pyplot as plt
 
 args = json.load(open('args.json'))
