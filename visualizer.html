@@ -47,7 +47,7 @@
     function initMap() {
       a = 2
       const mapEl = document.getElementById('map')
-      axios.get('params.json').then(resp => {
+      axios.get('args.json').then(resp => {
         args = resp.data
         const map = new google.maps.Map(mapEl, {
           zoom: 11,
