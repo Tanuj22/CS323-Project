@@ -11,6 +11,7 @@ args = json.load(open('args.json'))
 current_map = RasterMap(args['tif'])
 
 algorithms = {
+    'Tabu Search': {'function': algo.tabu_search, 'color': '#56FCFF'},
     'Gradient Decent': {'function': algo.gradient_descent, 'color': '#FF0000'},
     'Momentum': {'function': algo.gradient_descent_w_momentum, 'color': '#009933'}
 }

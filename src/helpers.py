@@ -5,6 +5,13 @@ def get_step_costs(rmap, steps):
     return [rmap.get_cost(*s) for s in steps]
 
 
+def get_possible_steps(theta, n_points=100, step_size=.002):
+    c_s = 2 * np.pi / n_points
+    return [(theta[0] + step_size * np.sin(c_s * i),
+             theta[1] + step_size * np.cos(c_s * i))
+            for i in range(n_points)]
+
+
 # Fetch elevations at offsets in each dimension
 def get_nesw_steps(theta, step_size=.005):
     try:
