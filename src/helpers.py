@@ -2,25 +2,32 @@ import numpy as np
 
 
 def get_step_costs(rmap, steps):
-    return [rmap.get_cost(*s) for s in steps]
+    cost = []
+    for s in steps:
+        cost.append(rmap.get_cost(*s))
+    return cost
 
 
 def get_possible_steps(theta, n_points=100, step_size=.002):
     c_s = 2 * np.pi / n_points
-    return [(theta[0] + step_size * np.sin(c_s * i),
-             theta[1] + step_size * np.cos(c_s * i))
-            for i in range(n_points)]
+    lat, lng = theta[0], theta[1]
+    steps = []
+    for i in range(n_points):
+        steps.append((lat + step_size * np.sin(c_s * i),
+                      lng + step_size * np.cos(c_s * i)))
+    return steps
 
 
 # Fetch elevations at offsets in each dimension
 def get_nesw_steps(theta, step_size=.005):
+    lat, lng = theta[0], theta[1]
     try:
-        step_north = (theta[0] + step_size, theta[1])
-        step_south = (theta[0] - step_size, theta[1])
-        step_east = (theta[0], theta[1] + step_size)
-        step_west = (theta[0], theta[1] - step_size)
+        step_north = (lat + step_size, lng)
+        step_south = (lat - step_size, lng)
+        step_east = (lat, lng + step_size)
+        step_west = (lat, lng - step_size)
     except IndexError:
-        print('The boundary of elevation map has been reached')
+        print('The boundary is reached')
         return None
 
     return step_north, step_east, step_south, step_west

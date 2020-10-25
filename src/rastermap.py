@@ -13,9 +13,9 @@ class RasterMap(object):
         self.band = band
         self.max_val = np.max(band)
 
-    def get_elevation(self, lat, lon):
-        vals = self.data.index(lon, lat)
+    def get_elevation(self, lat, lng):
+        vals = self.data.index(lng, lat)
         return self.band[vals]
 
-    def get_cost(self, lat, lon):
-        return self.get_elevation(lat, lon) * -1 + self.max_val  # invert elevation for accent rather than decent
+    def get_cost(self, lat, lng):
+        return self.get_elevation(lat, lng) * -1 + self.max_val  # invert elevation for accent rather than decent
