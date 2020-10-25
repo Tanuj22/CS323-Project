@@ -14,7 +14,7 @@ algorithms = {
     'Tabu Search': {'function': algo.tabu_search, 'color': '#56FCFF'},
     'Stochastic Hill Climb': {'function': algo.stochastic_hill_climb, 'color': '#F442C5'},
     'Simulated Annealing': {'function': algo.simulated_annealing, 'color': '#ED7504'},
-    'Gradient Decent': {'function': algo.gradient_descent, 'color': '#FF0000'},
+    'Gradient Descent': {'function': algo.gradient_descent, 'color': '#FF0000'},
     'Momentum': {'function': algo.gradient_descent_w_momentum, 'color': '#009933'}
 }
 
