@@ -5,7 +5,7 @@ This project is inspired from [Physical Gradient Descent repository](https://git
 
 The goal of the project is to - 
 
-Get the location of a nearby hill wherever our starting conditions are. For simplicity the starting location is taken to be the Indian Institute of Technology, Jodhpur with latitude 26.472258 and longitude 73.115067.
+Get the location of a nearby hill wherever our starting conditions are. For simplicity the starting location is taken to be the Indian Institute of Technology, Jodhpur with latitude `26.472258` and longitude `73.115067`.
 
 ##Getting Started 
 
