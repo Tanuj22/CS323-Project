@@ -40,7 +40,7 @@ for k, v in algorithms.items():
 
 plt.xlabel('Iterations')
 plt.ylabel('Elevation')
-plt.title('Hill Climbing Algorithms')
+plt.title('Local Search Algorithms')
 plt.legend()
 plt.tight_layout()
 
